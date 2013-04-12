@@ -1,0 +1,24 @@
+Dashboard
+- if current_user
+  %div= "user email: #{current_user.email_address}"
+  .organizations-headline= link_to "Organizations", organizations_path
+  .organizations
+    - current_user.organizations.each do |organization|
+      = render :partial => "organizations/summary", :locals => {:organization => organization}
+  .groups-headline= link_to "Groups", groups_path
+  .groups
+    - current_user.groups.each do |group|
+      = render :partial => "groups/summary", :locals => {:group => group}
+  .tasks-headline= link_to "Tasks", tasks_path
+  .tasks
+    - current_user.assigned_tasks.in_priority_order.each do |task|
+      = render :partial => "tasks/summary", :locals => {:task => task, :include_actions => false}
+  .start-tasks-headline Tasks To Start
+  .start-tasks
+    - current_user.all_roles_including(:task_definitions).each do |role|
+      = form_tag '/tasks/new', :method => 'get' do
+        = hidden_field_tag('user_id', @user.id)
+        .role-action= select_tag('task_id', options_from_collection_for_select(role.task_definitions, 'id', 'name_with_role'))
+        = submit_tag('start task', :name => nil)
+- else
+  %div no current user

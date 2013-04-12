@@ -1,0 +1,7 @@
+- if current_user == task.owner
+  .task= link_to task.name, edit_task_path(task)
+  - if include_actions 
+    = link_to 'Destroy', task_path(task), :confirm => 'Are you sure?', :method => :delete
+- else
+  .task= link_to task.name, task_path(task) 
+

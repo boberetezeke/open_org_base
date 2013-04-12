@@ -1,0 +1,11 @@
+User:
+= @user.name
+.roles-title Roles
+- @user.roles.each do |role|
+  .role-title= link_to(role.name, role)
+  = form_tag '/tasks/new'
+    = hidden_field('user_id', @user.id)
+    .role-action= select_tag('task_id', options_from_collection_for_select(role.task_definitions, 'id', 'name'))
+    = submit_button_tag('start task')
+
+
