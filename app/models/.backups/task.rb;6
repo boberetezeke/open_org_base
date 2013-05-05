@@ -207,7 +207,10 @@ class Task < ActiveRecord::Base
            :data_type => "string",
            :control_type => "text_field"
         }
+puts "options = #{options.inspect}"
+=begin
         TaskField.new(default_options.merge(options))
+=end
       end
     end
 

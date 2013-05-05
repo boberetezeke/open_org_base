@@ -201,13 +201,17 @@ class Task < ActiveRecord::Base
 
     def task_field(*args)
       options = args.last.is_a?(Hash) ? args.pop : {}
+$stdout.puts "in task_field"
       @defined_task_fields = args.flatten.map do |task_field_name| 
         default_options = {
            :name => task_field_name, 
            :data_type => "string",
            :control_type => "text_field"
         }
+puts "options = #{options.inspect}"
+=begin
         TaskField.new(default_options.merge(options))
+=end
       end
     end
 

@@ -1,5 +1,8 @@
 require "test_helper"
 
+n = Task.create(:name => "bob")
+
+=begin
 class MyTask < Task
   task_field :field1, :field2
 end
@@ -151,3 +154,4 @@ class TaskTest < ActiveSupport::TestCase
     end
   end
 end
+=end 

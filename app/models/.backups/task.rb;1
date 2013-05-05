@@ -201,6 +201,7 @@ class Task < ActiveRecord::Base
 
     def task_field(*args)
       options = args.last.is_a?(Hash) ? args.pop : {}
+
       @defined_task_fields = args.flatten.map do |task_field_name| 
         default_options = {
            :name => task_field_name, 

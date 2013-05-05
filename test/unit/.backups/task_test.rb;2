@@ -4,6 +4,7 @@ class MyTask < Task
   task_field :field1, :field2
 end
 
+=begin
 class MyTask2 < Task
   task_field :field3, :data_type => :integer, :control_type => :slider
 end
@@ -151,3 +152,4 @@ class TaskTest < ActiveSupport::TestCase
     end
   end
 end
+=end 
