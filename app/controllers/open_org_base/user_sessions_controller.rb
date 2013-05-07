@@ -1,5 +1,6 @@
 require "net/http"
 
+module OpenOrgBase
 class UserSessionsController < ApplicationController
   skip_before_filter :requires_authentication
 
@@ -62,4 +63,5 @@ class UserSessionsController < ApplicationController
     session[:user_id] = nil
     redirect_to root_url
   end
+end
 end

@@ -1,3 +1,4 @@
+module OpenOrgBase
 class TasksController < ApplicationController
   respond_to :html, :json, :xml
 
@@ -87,4 +88,5 @@ class TasksController < ApplicationController
     raise "Organization #{organization.name} not owned by user #{current_user.id}" unless current_user.organizations.include?(organization)
     @task.organization = organization
   end
+end
 end

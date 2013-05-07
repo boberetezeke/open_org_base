@@ -1,3 +1,4 @@
+module OpenOrgBase
 class TaskDefinitionsController < ApplicationController
   # GET /task_definitions
   # GET /task_definitions.json
@@ -80,4 +81,5 @@ class TaskDefinitionsController < ApplicationController
       format.json { head :no_content }
     end
   end
+end
 end
