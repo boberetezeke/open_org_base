@@ -21,6 +21,7 @@ end
 
 class TaskTest < ActiveSupport::TestCase
   context "testing callbacks" do
+=begin
     should "call on_activate callback on task creation" do
       mytask3_prototype = MyTask3.new(:name => "my task prototype 3")
       mytask3_prototype.is_prototype = true
@@ -35,6 +36,7 @@ class TaskTest < ActiveSupport::TestCase
 
       assert_equal "field4 final value", my_task3.field4
     end
+=end
   end
 
   context "testing task class methods" do
