@@ -21,9 +21,9 @@ gem 'haml'
 gem 'rabl-rails'
 gem 'bcrypt-ruby'
 
-group :test do
+#group :test do
   gem 'minitest-reporters', '>= 0.4.1'
   gem 'factory_girl'
   gem 'mocha', :require => false
   gem 'shoulda'
-end
+#end
