@@ -1,4 +1,6 @@
-class OrganizationsController < InheritedResources::Base
+module OpenOrgBase
+class OrganizationsController < ApplicationController
+  inherit_resources 
   actions :index, :show, :new, :edit
 
 protected
@@ -15,4 +17,5 @@ protected
       organization = Organization.new
     end
   end
+end
 end
